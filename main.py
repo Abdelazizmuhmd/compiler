@@ -2,7 +2,7 @@ from lexer import Lexer
 import io
 from parserTB import Parser
 
-text_input = """/-This is main function
+text_input = """/-This is main function+
 """
 
 lexer = Lexer().get_lexer()
