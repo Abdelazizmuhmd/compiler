@@ -6,9 +6,6 @@ class Lexer():
         self.lexer = LexerGenerator()
 
     def _add_tokens(self):
-        # Print
-        #self.lexer.add('IDENTIFIER', r'[a-zA-Z|_].([a-zA-Z0-9-|_-])*')
-        self.lexer.add('PRINT', r'print')
         self.lexer.add('Class', r'Division')
         self.lexer.add('Inheritance', r'InferedFrom')
         self.lexer.add('Condition', r'WhetherDo')
@@ -51,19 +48,14 @@ class Lexer():
         self.lexer.add('Braces', r'\}')
         self.lexer.add('Quotation Mark', r'\"')
         self.lexer.add('Inclusion', r'Using')
-        # self.lexer.add('Comment', r'\/#')
-        # self.lexer.add('Comment', r'\#/')
-        # self.lexer.add('Comment', r'^(/-)$')
         self.lexer.add('Delimiter', r'\@')
         self.lexer.add('Delimiter', r'\;')
         self.lexer.add('Constant', r'\d+')
         #self.lexer.add('IDENTIFIER',r'^[a-zA-Z|_].([a-zA-Z-|_-|0-9])')
-        #self.lexer.add('Words', r'^[a-zA-Z]*$')
         # Parenthesis
-        #self.lexer.add('OPEN_PAREN', r'\(')
-        #self.lexer.add('CLOSE_PAREN', r'\)')
+        self.lexer.add('OPEN_PAREN', r'\(')
+        self.lexer.add('CLOSE_PAREN', r'\)')
         # Semi Colon
-        #self.lexer.add('SEMI_COLON', r'\;')
         # Operators
         #self.lexer.add('SUM', r'\+')
         #self.lexer.add('DIFF', r'\-')
@@ -72,7 +64,6 @@ class Lexer():
 
         # Ignore spaces
         self.lexer.ignore('\s+')
-        #self.lexer.ignore('[a-zA-Z]')
         self.lexer.add('IDENTIFIER', r'[a-zA-Z|_].([a-zA-Z0-9|_])*')
 
     def get_lexer(self):
