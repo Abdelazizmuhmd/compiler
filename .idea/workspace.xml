@@ -21,6 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c1985a96-d00d-4df2-9fb9-eea7b814c8d9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parserTB.py" beforeDir="false" afterPath="$PROJECT_DIR$/parserTB.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

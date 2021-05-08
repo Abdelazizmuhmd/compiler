@@ -6,17 +6,16 @@ class Parser():
     def __init__(self):
         self.pg = ParserGenerator(
             # A list of all token names accepted by the parser.
-            ['Class', 'Inheritance', 'Condition', 'Integer',
+            ['Class', 'Inheritance', 'CONDITION', 'Integer',
              'Character', 'String', 'Float', 'SFloat', 'Void',
              'Break','Loop','Return','Struct','Switch','Start_Statement',
              'End_Statement','Comment','Arithmetic_Operation','Logic_operators',
              'relational_operators','Assignment_operator','Access_operator','Braces'
-             ,'Quotation_Mark','Inclusion','Delimiter','Constant','IDENTIFIER']
+             ,'Quotation_Mark','Inclusion','Delimiter','Constant','IDENTIFIER','Angle_brackets']
         )
 
     #@self.pg.production(':')
     def parse(self):
-        #some rules and tokens share same name like conidition, what is the token for () ,  extra spaces for no reason ex 24 after expression and ;
         #1
         @self.pg.production('Program : Start_Statement ClassDeclaration Delimiter End_Statement Access_Operator')
         @self.pg.production('Program : Comment Delimiter using_command')
@@ -24,7 +23,6 @@ class Parser():
             print("matched Program")
 
         #2
-        # id -> what is id
         @self.pg.production('ClassDeclaration : Class Delimiter IDENTIFIER Braces Class_Implementation Braces')
         @self.pg.production('ClassDeclaration : Class Delimiter IDENTIFIER Delimiter Inheritance Braces Class_Implementation Braces')
         def ClassDeclaration(P):
@@ -34,22 +32,18 @@ class Parser():
         @self.pg.production('Class_Implementation : VarDeclaration Class_Implementation')
         @self.pg.production('Class_Implementation : MethodDeclaration Class_Implementation')
         @self.pg.production('Class_Implementation : Comment Class_Implementation')
-        @self.pg.production('Class_Implementation : Func _Call Class_Implementation')
-        #empty idk what it is
-        # @self.pg.production('empty')
-        # def Class_Implementation(P):
-        #     print("matched Class_Implementation")
-
+        @self.pg.production('Class_Implementation : Func_Call Class_Implementation')
+        #@self.pg.production('empty')
+        def Class_Implementation(P):
+            print("matched Class_Implementation")
         #4
-        #extra space after decl
         @self.pg.production('MethodDeclaration : Func Decl Delimiter')
         @self.pg.production('MethodDeclaration : Func Decl Braces VarDeclaration Statements Braces')
         def MethodDeclaration(P):
             print("matched MethodDeclaration")
 
         #5
-        #extra space after @
-        @self.pg.production('Func Decl : Type Delimiter IDENTIFIER relational operators ParameterList relational operators')
+        @self.pg.production('Func Decl : Type Delimiter IDENTIFIER Angle_brackets ParameterList Angle_brackets')
         def FuncDecl(P):
             print("matched Func Decl")
 
@@ -65,7 +59,6 @@ class Parser():
             print("matched Type")
 
         #7
-        #empty idk what it is
         @self.pg.production('ParameterList : empty')
         @self.pg.production('ParameterList : NoneValue')
         @self.pg.production('ParameterList : Non-Empty List')
@@ -73,15 +66,12 @@ class Parser():
             print("matched ParameterList")
 
         #8
-        #extra space after @
         @self.pg.production('Non-Empty List : Type Delimiter IDENTIFIER')
-        #what is  ,
         @self.pg.production('Non-Empty List : Non-Empty List , Type Delimiter IDENTIFIER')
         def NonEmptyList(P):
             print("matched Non-Empty List")
 
         #9
-        #idk what is empty
         #@self.pg.production('VarDeclaration : empty')
         @self.pg.production('VarDeclaration : Type Delimiter ID_List Delimiter VarDeclaration')
         def VarDeclaration(P):
@@ -89,27 +79,24 @@ class Parser():
 
         #10
         @self.pg.production('ID_List : IDENTIFIER')
-        #what id ID and Comma
         @self.pg.production('ID_List : ID_List , IDENTIFIER')
         def ID_List(P):
             print("matched ID_List")
 
         #11
-        #what is empty
         @self.pg.production('Statements : empty')
         @self.pg.production('Statements : Statement Statements')
         def Statements(P):
             print("matched Statements")
 
         #12
-        #what is ID
         @self.pg.production('Statement : Assignment')
         @self.pg.production('Statement : WhetherDo_Statement')
         @self.pg.production('Statement : RingWhen_Statement')
         @self.pg.production('Statement : BackedValue_Statement')
-        @self.pg.production('Statement : terminatethis _Statement')
-        @self.pg.production('Statement : read Braces IDENTIFIER Braces Delimiter')
-        @self.pg.production('Statement : write Braces Expression Braces Delimiter')
+        @self.pg.production('Statement : terminatethis_Statement')
+        @self.pg.production('Statement : read Angle_brackets IDENTIFIER Angle_brackets Delimiter')
+        @self.pg.production('Statement : write Angle_brackets Expression Angle_brackets Delimiter')
         def Statement(P):
              print("matched Statement")
 
@@ -119,10 +106,9 @@ class Parser():
             print("matched Assignment")
 
         #14
-        #what is ID
-        @self.pg.production('Func _Call : IDENTIFIER Braces Argument_List Braces Delimiter')
+        @self.pg.production('Func_Call : IDENTIFIER Angle_brackets Argument_List Angle_brackets Delimiter')
         def Func_Call(P):
-            print("matched Func _Call")
+            print("matched Func_Call")
 
         #15
         @self.pg.production('Argument_List : empty')
@@ -131,7 +117,6 @@ class Parser():
             print("matched Argument_List")
 
         #16
-        #what is comma
         @self.pg.production('NonEmpty_Argument_List : Expression')
         @self.pg.production('NonEmpty_Argument_List : NonEmpty_Argument_List , Expression')
         def onEmpty_Argument_List(P):
@@ -142,7 +127,7 @@ class Parser():
             print("matched Block Statements")
 
         #18
-        @self.pg.production('WhetherDo_Statement : Condition Arithmetic_Operation Condition_Expression Arithmetic_Operation Block Statements Condition Statement')
+        @self.pg.production('WhetherDo_Statement : CONDITION Angle_brackets Condition_Expression Angle_brackets Block Statements CONDITION Statement')
         def WhetherDo_Statement(P):
             print("matched WhetherDo_Statement")
 
@@ -169,8 +154,7 @@ class Parser():
             print("matched  Comparison_Op")
 
         #23
-        # () is not defiend
-        @self.pg.production('RingWhen_Statement : Loop ( Condition _Expression ) Block Statements Condition Statement')
+        @self.pg.production('RingWhen_Statement : Loop Angle_brackets Condition_Expression Angle_brackets Block Statements')
         def RingWhen_Statement(P):
             print("matched  RingWhen_Statement")
 
@@ -197,43 +181,41 @@ class Parser():
         def Add_Op(P):
             print("matched  Add_Op")
 
-       #28
+        #28
         @self.pg.production('Term : Factor')
         @self.pg.production('Term : Term Delimiter Mul_Op Delimiter Factor')
         def Term(P):
             print("matched  Term")
 
-       #29
+        #29
         @self.pg.production('Mul_Op : Arithmetic_Operation')
         def Mul_Op(P):
             print("matched  Mul_Op")
 
-       #30
-       #what is number , id
-        @self.pg.production('Factor : ID')
+        #30
+        @self.pg.production('Factor : IDENTIFIER')
         @self.pg.production('Factor : Number')
         def Factor(P):
             print("matched  Factor")
 
 
 
-       #31
-       #what is STR
-        @self.pg.production('Comment : Comment STR Comment')
-        @self.pg.production('Comment : Comment STR Comment')
-        @self.pg.production('Comment : Comment STR')
+        #31
+        #what is STR
+        @self.pg.production('Comment : Comment String Comment')
+        @self.pg.production('Comment : Comment String Comment')
+        @self.pg.production('Comment : Comment String')
         def Comment(P):
             print("matched  Comment")
 
-       #32
-        #what is () and f_name.txt represent or meanly txt
-        @self.pg.production('using_command :  Inclusion (F_name Access Operator txt) Delimiter')
+        #32
+        @self.pg.production('using_command :  Inclusion Angle_brackets F_name Access Operator txt Angle_brackets Delimiter')
         def using_command(P):
             print("matched  using_command")
 
-       #33
-       #what is  STR
-        @self.pg.production('F_name : STR')
+        #33
+        #what is  STR
+        @self.pg.production('F_name : String')
         def F_name(P):
             print("matched  F_name")
 
@@ -241,8 +223,8 @@ class Parser():
         def error_handle(token):
            raise ValueError(token)
 
-    def get_parser(self):
-        return self.pg.build()
+        def get_parser(self):
+          return self.pg.build()
 
 
 
