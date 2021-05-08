@@ -237,6 +237,13 @@ class Parser():
        def F_name(P):
             print("matched  F_name)
 
+       @self.pg.error
+       def error_handle(token):
+           raise ValueError(token)
+
+       def get_parser(self):
+           return self.pg.build()
+
 
 
 
