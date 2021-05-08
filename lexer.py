@@ -53,8 +53,8 @@ class Lexer():
         self.lexer.add('Constant', r'\d+')
         #self.lexer.add('IDENTIFIER',r'^[a-zA-Z|_].([a-zA-Z-|_-|0-9])')
         # Parenthesis
-        self.lexer.add('OPEN_PAREN', r'\(')
-        self.lexer.add('CLOSE_PAREN', r'\)')
+        # self.lexer.add('OPEN_PAREN', r'\(')
+        # self.lexer.add('CLOSE_PAREN', r'\)')
         # Semi Colon
         # Operators
         #self.lexer.add('SUM', r'\+')
