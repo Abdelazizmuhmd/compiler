@@ -2,8 +2,7 @@ from lexer import Lexer
 import io
 from parserTB import Parser
 
-text_input = """/-This is main function
-Ire@3num=5);()
+text_input = """Division @
 """
 new_input=""""""
 #for removing commented words
@@ -37,7 +36,9 @@ print(errors)
 for k, v in d.items():
  line=v
  print ("{:<15} {:<20} {:<30} {:<35} {:<20}".format(line[0], line[1], line[2],line[3],line[4]))
-# pg = Parser()
-# pg.parse()
-# parser = pg.get_parser()
-# parser.parse(tokens).eval()
+
+
+pg = Parser()
+pg.parse()
+parser = pg.get_parser()
+parser.parse(tokens)
