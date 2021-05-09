@@ -1,6 +1,7 @@
 from lexer import Lexer
 import io
 from parserTB import Parser
+import re
 
 
 
@@ -16,10 +17,12 @@ for y in text_input.splitlines():
      #   new_input = new_input+y[0:y.find("/#")+2]+y[(y.find("#/")):]+"\n"
     else:
         new_input = new_input + y + "\n"
-if('/#' in new_input and '#/' in new_input):
-    new_input = new_input.replace(new_input[(new_input.find("/#")+2):new_input.find("#/")],"")
-print(new_input)
 
+
+#new_input = new_input.replace(new_input[(new_input.find("/#")+2):new_input.find("#/")],"")
+
+new_input = re.sub('/#.*?#/', '/##/', new_input, flags=re.DOTALL)
+print(new_input)
 lexer = Lexer().get_lexer()
 line_no = 1
 tokens = lexer.lex(new_input)
@@ -27,7 +30,6 @@ d ={1: ["Line No", "Lexeme","Return Token","Lexeme No in Line","Matchability"]}
 i = 2
 lexemer = 1
 errors = 0
-
 for y in new_input.splitlines():
     for token in lexer.lex(y):
         #tokens = lexer.lex(y)
@@ -52,6 +54,7 @@ pg = Parser()
 pg.parse()
 parser = pg.get_parser()
 parser.parse(tokens)
+
 
 
 
