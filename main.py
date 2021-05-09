@@ -2,8 +2,9 @@ from lexer import Lexer
 import io
 from parserTB import Parser
 
-text_input = """Division @
-"""
+
+text_input = """Beginning;
+Division@x{Ire@decrease;Ire@x;};End."""
 new_input=""""""
 #for removing commented words
 for y in text_input.splitlines():
@@ -12,7 +13,6 @@ for y in text_input.splitlines():
         #print(y[0:y.find("/-")+2])
     else:
         new_input = new_input + y + "\n"
-
 lexer = Lexer().get_lexer()
 line_no = 1
 tokens = lexer.lex(new_input)
@@ -37,8 +37,10 @@ for k, v in d.items():
  line=v
  print ("{:<15} {:<20} {:<30} {:<35} {:<20}".format(line[0], line[1], line[2],line[3],line[4]))
 
-
 pg = Parser()
 pg.parse()
 parser = pg.get_parser()
-parser.parse(tokens)
+parser.parse(tokens).eval()
+
+
+

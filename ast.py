@@ -6,32 +6,6 @@ class Number():
         return int(self.value)
 
 
-class BinaryOp():
-    def __init__(self, left, right):
-        self.left = left
-        self.right = right
-
-
-class Sum(BinaryOp):
-    def eval(self):
-        return self.left.eval() + self.right.eval()
-
-
-class Diff(BinaryOp):
-    def eval(self):
-        return self.left.eval() - self.right.eval()
-
-
-class Times(BinaryOp):
-    def eval(self):
-        return self.left.eval() * self.right.eval()
-
-
-class Div(BinaryOp):
-    def eval(self):
-        return self.left.eval() / self.right.eval()
-
-
 class Print():
     def __init__(self, value):
         self.value = value

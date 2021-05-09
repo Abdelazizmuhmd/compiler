@@ -7,13 +7,14 @@ class Lexer():
     def _add_tokens(self):
         self.lexer.add('Class', r'Division')
         self.lexer.add('Inheritance', r'InferedFrom')
-        self.lexer.add('Condition', r'WhetherDo')
-        self.lexer.add('Condition', r'Else')
+        self.lexer.add('CONDITION', r'WhetherDo')
+        self.lexer.add('CONDITION', r'Else')
         self.lexer.add('Integer', r'Ire')
-        self.lexer.add('Condition', r'Sire')
+        self.lexer.add('SInteger', r'Sire')
         self.lexer.add('Character', r'Clo')
         self.lexer.add('String', r'SetOfClo')
         self.lexer.add('Float', r'FBU')
+        self.lexer.add('Void', r'NoneValue')
         self.lexer.add('SFloat', r'SFBU')
         self.lexer.add('Void', r'NoneValue')
         self.lexer.add('Break', r'TerminateThisNow')
@@ -44,12 +45,17 @@ class Lexer():
         self.lexer.add('Braces', r'\[')
         self.lexer.add('Braces', r'\]')
         self.lexer.add('Braces', r'\{')
+        self.lexer.add(',', r'\,')
         self.lexer.add('Braces', r'\}')
         self.lexer.add('Quotation_Mark', r'\"')
         self.lexer.add('Inclusion', r'Using')
         self.lexer.add('Delimiter', r'\@')
         self.lexer.add('Delimiter', r'\;')
         self.lexer.add('Constant', r'\d+')
+        self.lexer.add('Angle_brackets', r'\(')
+        self.lexer.add('Angle_brackets', r'\)')
+
+
         #self.lexer.add('IDENTIFIER',r'^[a-zA-Z|_].([a-zA-Z-|_-|0-9])')
         # Parenthesis
         # self.lexer.add('OPEN_PAREN', r'\(')
@@ -63,7 +69,8 @@ class Lexer():
 
         # Ignore spaces
         self.lexer.ignore('\s+')
-        self.lexer.add('IDENTIFIER', r'[a-zA-Z|_].([a-zA-Z0-9|_])*')
+        self.lexer.add('IDENTIFIER', r'[A-Za-z0-9_]*')
+        self.lexer.add('STR', r'[A-Za-z0-9=]*')
 
     def get_lexer(self):
         self._add_tokens()
