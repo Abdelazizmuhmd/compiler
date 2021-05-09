@@ -69,15 +69,9 @@ class Lexer():
 
         # Ignore spaces
         self.lexer.ignore('\s+')
-<<<<<<< HEAD
-        self.lexer.add('IDENTIFIER', r'[a-zA-Z|_].([a-zA-Z0-9|_])*')
-        self.lexer.add('ERROR', r'[\w\[\]`!@#$%\^&*()={}:;<>,+\'-]*')
-||||||| merged common ancestors
-        self.lexer.add('IDENTIFIER', r'[a-zA-Z|_].([a-zA-Z0-9|_])*')
-=======
         self.lexer.add('IDENTIFIER', r'[A-Za-z0-9_]*')
         self.lexer.add('STR', r'[A-Za-z0-9=]*')
->>>>>>> 37245ed03d7b298c88fe94307f8a591040e3fb3d
+        self.lexer.add('ERROR', r'[\w\[\]`!@#$%\^&*()={}:;<>,+\'-]*')
 
     def get_lexer(self):
         self._add_tokens()

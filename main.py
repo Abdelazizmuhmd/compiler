@@ -2,17 +2,10 @@ from lexer import Lexer
 import io
 from parserTB import Parser
 
-<<<<<<< HEAD
-text_input = """Division @ dasdsd,,
-"""
-||||||| merged common ancestors
-text_input = """Division @
-"""
-=======
+
 
 text_input = """Beginning;
 Division@x{Ire@decrease;Ire@x;};End."""
->>>>>>> 37245ed03d7b298c88fe94307f8a591040e3fb3d
 new_input=""""""
 #for removing commented words
 for y in text_input.splitlines():
@@ -49,23 +42,10 @@ for k, v in d.items():
  print ("{:<15} {:<20} {:<30} {:<35} {:<20}".format(line[0], line[1], line[2],line[3],line[4]))
 print ("\nNUMBER OF ERROR ",errors)
 
-<<<<<<< HEAD
-# pg = Parser()
-# pg.parse()
-# parser = pg.get_parser()
-# parser.parse(tokens)
-||||||| merged common ancestors
-
 pg = Parser()
 pg.parse()
 parser = pg.get_parser()
 parser.parse(tokens)
-=======
-pg = Parser()
-pg.parse()
-parser = pg.get_parser()
-parser.parse(tokens).eval()
 
 
 
->>>>>>> 37245ed03d7b298c88fe94307f8a591040e3fb3d
