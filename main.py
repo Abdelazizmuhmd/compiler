@@ -12,8 +12,14 @@ for y in text_input.splitlines():
     if("/-" in y):
         new_input = new_input+y[0:y.find("/-")+2]+"\n"
         #print(y[0:y.find("/-")+2])
+    #elif('/#' in y and '#/' in y):
+     #   new_input = new_input+y[0:y.find("/#")+2]+y[(y.find("#/")):]+"\n"
     else:
         new_input = new_input + y + "\n"
+if('/#' in new_input and '#/' in new_input):
+    new_input = new_input.replace(new_input[(new_input.find("/#")+2):new_input.find("#/")],"")
+print(new_input)
+
 lexer = Lexer().get_lexer()
 line_no = 1
 tokens = lexer.lex(new_input)
@@ -40,7 +46,7 @@ for y in new_input.splitlines():
 for k, v in d.items():
  line=v
  print ("{:<15} {:<20} {:<30} {:<35} {:<20}".format(line[0], line[1], line[2],line[3],line[4]))
-print ("\nNUMBER OF ERROR ",errors)
+print ("\nNUMBER OF ERROR ",errors,"\n")
 
 pg = Parser()
 pg.parse()
