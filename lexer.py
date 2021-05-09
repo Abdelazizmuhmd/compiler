@@ -64,6 +64,7 @@ class Lexer():
         # Ignore spaces
         self.lexer.ignore('\s+')
         self.lexer.add('IDENTIFIER', r'[a-zA-Z|_].([a-zA-Z0-9|_])*')
+        self.lexer.add('ERROR', r'[\w\[\]`!@#$%\^&*()={}:;<>,+\'-]*')
 
     def get_lexer(self):
         self._add_tokens()

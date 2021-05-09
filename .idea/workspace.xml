@@ -40,8 +40,15 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="E:/Lab 4 Code-20210420" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings>
+        <option name="useSoftWraps" value="true" />
+      </console-settings>
+    </option>
   </component>
   <component name="RunManager">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
@@ -71,7 +78,7 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -90,27 +97,36 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="271" y="89" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1620442478368">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="361" y="72" key="#Notifications" timestamp="1620523391824">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="217" y="68" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1618917900701" />
+    <state x="361" y="72" key="#Notifications/0.0.1536.824@0.0.1536.824" timestamp="1620523391824" />
+    <state x="217" y="68" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1620519415402">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="217" y="68" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1620519415402" />
     <state x="271" y="89" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1080/1920.0.1920.1040@0.0.1920.1080" timestamp="1620442478368" />
     <state x="537" y="244" key="#com.intellij.tools.ToolEditorDialog" timestamp="1618919825101">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="537" y="244" key="#com.intellij.tools.ToolEditorDialog/0.0.1536.824@0.0.1536.824" timestamp="1618919825101" />
-    <state x="686" y="203" key="FileChooserDialogImpl" timestamp="1620442539853">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="423" y="0" key="CommitChangelistDialog2" timestamp="1620518983426">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="155" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1618922943195" />
+    <state x="423" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1620518983426" />
+    <state x="549" y="155" key="FileChooserDialogImpl" timestamp="1620523451611">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="155" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1620523451611" />
     <state x="686" y="203" key="FileChooserDialogImpl/0.0.1920.1080/1920.0.1920.1040@0.0.1920.1080" timestamp="1620442539853" />
     <state width="1898" height="82" key="GridCell.Tab.0.bottom" timestamp="1620451454123">
       <screen x="0" y="0" width="1920" height="1080" />
@@ -152,18 +168,26 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="840" y="259" key="RollbackChangesDialog/0.0.1920.1080/1920.0.1920.1040@0.0.1920.1080" timestamp="1620441822547" />
-    <state x="346" y="73" key="SettingsEditor" timestamp="1620442417535">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="277" y="56" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1620387126047" />
-    <state x="346" y="73" key="SettingsEditor/0.0.1920.1080/1920.0.1920.1040@0.0.1920.1080" timestamp="1620442417535" />
-    <state x="465" y="238" key="com.intellij.ide.util.TipDialog" timestamp="1620386628509">
+    <state x="277" y="56" key="SettingsEditor" timestamp="1620522989068">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="465" y="238" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1620386628509" />
+    <state x="277" y="56" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1620522989068" />
+    <state x="346" y="73" key="SettingsEditor/0.0.1920.1080/1920.0.1920.1040@0.0.1920.1080" timestamp="1620442417535" />
+    <state x="465" y="238" key="com.intellij.ide.util.TipDialog" timestamp="1620522923873">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="465" y="238" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1620522923873" />
+    <state x="578" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1620519079561">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="578" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1620519079561" />
     <state x="623" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1620445333896">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="623" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1920.1080/1920.0.1920.1040@0.0.1920.1080" timestamp="1620445333896" />
+    <state x="491" y="325" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1620523406269">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="491" y="325" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.0.1536.824@0.0.1536.824" timestamp="1620523406269" />
   </component>
 </project>
